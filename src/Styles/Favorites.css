@@ -1,0 +1,159 @@
+.favorites {
+  padding: 20px;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Increased gap for more spacing between cards */
+}
+
+.contact-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #FF8A8A; /* Match the primary accent color */
+  color: #001A6E; /* Consistent text color */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Adjusted spacing */
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition for shadow */
+}
+
+.contact-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* Enhanced hover shadow */
+}
+
+.contact-info {
+  flex: 2;
+}
+
+.contact-info h4 {
+  margin: 0 0 10px;
+  font-size: 1.25rem; /* Adjusted for consistency with other headings */
+  font-weight: 600;
+  color: #333; /* Darker text for better readability */
+}
+
+.contact-info p {
+  margin: 4px 0;
+  color: #777; /* Consistent color for secondary text */
+}
+
+.actions {
+  display: flex;
+  gap: 12px; /* Spacing for action buttons */
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 6px; /* Rounded corners for buttons */
+  padding: 10px 15px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Favorite Button Style */
+.favorite-btn {
+  background-color: transparent;
+  color: #FF6347; /* Consistent red for favoriting */
+}
+
+.favorite-btn:hover {
+  color: #FF3B30; /* Slightly darker on hover for better interaction */
+}
+
+/* Edit Button Style */
+.edit-btn {
+  background-color: transparent;
+  color: #FF6347; /* Consistent red for favoriting */
+  color:white; /* Dark text for readability */
+}
+
+.edit-btn:hover {
+  background-color: #FF6347; /* Slight darkening on hover */
+}
+
+/* Delete Button Style */
+.delete-btn {
+  background-color: transparent;
+  color: #FF6347; /* Consistent red for favoriting */
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #FF6347; /* Slight darkening of red */
+}
+
+/* Edit Modal Styles */
+.edit-contact-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.edit-contact-modal {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  height: 530px; /* Adjusted height */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding-top: 0px;
+}
+
+.edit-contact-modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-contact-modal label {
+  margin-top: 0px;
+  font-weight: bold;
+}
+
+.edit-contact-modal input,
+.edit-contact-modal textarea,
+.edit-contact-modal select {
+  margin-top: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.edit-contact-modal textarea {
+  resize: vertical;
+  min-height: 10px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-actions button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+}
+
+.modal-actions button[type="button"] {
+  background-color: #f44336;
+  color: white;
+}

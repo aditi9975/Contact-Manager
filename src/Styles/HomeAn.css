@@ -1,0 +1,203 @@
+/* === Variables for both themes === */
+:root {
+  /* Light theme variables */
+  --light-background: #f1f7ff;
+  --light-text: #333333;
+  --light-primary: #001A6E;
+  --light-secondary: #FFABAB;
+  --light-card: #ffffff;
+  --light-shadow: rgba(0, 0, 0, 0.05);
+  --light-chart-shadow: #ffababb3;
+  
+  /* Dark theme variables */
+  --dark-background: #1d2635;
+  --dark-text: #eaeaea;
+  --dark-primary: #FFABAB;
+  --dark-secondary: #074799;
+  --dark-card: #2a3d66;
+  --dark-shadow: rgba(0, 0, 0, 0.2);
+  --dark-chart-shadow: rgba(255, 171, 171, 0.2);
+}
+
+/* === Base styles with theme support === */
+.contact-home-app .home {
+  padding: 30px;
+  background-color: var(--light-background);
+  color: var(--light-text);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px var(--light-shadow);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-home-app h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--light-primary);
+  transition: color 0.3s ease;
+}
+
+.contact-home-app p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: var(--light-text);
+  transition: color 0.3s ease;
+}
+
+.contact-home-app .notifications h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: var(--light-primary);
+  transition: color 0.3s ease;
+}
+
+.contact-home-app .reminder {
+  background-color: var(--light-secondary);
+  padding: 15px;
+  border-radius: 8px;
+  color: var(--light-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-home-app .reminder button {
+  background-color: var(--light-primary);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
+}
+
+.contact-home-app .reminder button:hover {
+  background-color: var(--light-secondary);
+  transform: translateY(-2px);
+}
+
+.contact-home-app .analytics {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: var(--light-background);
+  color: var(--light-text);
+  border-radius: 30px;
+  box-shadow: 0 4px 18px var(--light-chart-shadow);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* === Updated Chart Section Styles === */
+.contact-home-app .chart-section {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 103%;
+  margin-top: 20px;
+  margin-left: -5px;
+}
+
+.contact-home-app .pie-chart,
+.contact-home-app .growth-chart {
+  flex: 1;
+  min-width: calc(20% - 10px);
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px var(--light-shadow);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-home-app .pie-chart h3,
+.contact-home-app .growth-chart h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--light-secondary);
+  transition: color 0.3s ease;
+}
+
+/* === Dark Mode Styles === */
+body.dark .contact-home-app .home {
+  background-color: var(--dark-background);
+  color: var(--dark-text);
+  box-shadow: 0 4px 15px var(--dark-shadow);
+}
+
+body.dark .contact-home-app h2,
+body.dark .contact-home-app .notifications h3 {
+  color: var(--dark-text);
+}
+
+body.dark .contact-home-app p {
+  color: var(--dark-text);
+}
+
+body.dark .contact-home-app .reminder {
+  background-color: var(--dark-card);
+  color: var(--dark-text);
+}
+
+body.dark .contact-home-app .reminder button {
+  background-color: var(--dark-primary);
+}
+
+body.dark .contact-home-app .reminder button:hover {
+  background-color: var(--dark-secondary);
+}
+
+body.dark .contact-home-app .analytics {
+  background-color: var(--dark-background);
+  color: var(--dark-text);
+  box-shadow: 0 4px 18px var(--dark-chart-shadow);
+}
+
+body.dark .contact-home-app .pie-chart,
+body.dark .contact-home-app .growth-chart {
+  background-color: var(--dark-card);
+  box-shadow: 0 2px 10px var(--dark-shadow);
+}
+
+body.dark .contact-home-app .pie-chart h3,
+body.dark .contact-home-app .growth-chart h3 {
+  color: var(--dark-text);
+}
+
+/* === Chart Styles with Dark Mode Support === */
+body.dark .contact-home-app .recharts-wrapper {
+  background-color: var(--dark-card);
+}
+
+body.dark .contact-home-app .recharts-tooltip-wrapper {
+  background-color: var(--dark-card);
+  color: var(--dark-text);
+}
+
+/* === Responsive Styles === */
+@media (max-width: 1024px) {
+  .contact-home-app .chart-section {
+    flex-direction: column;
+  }
+
+  .contact-home-app .pie-chart,
+  .contact-home-app .growth-chart {
+    width: 100%;
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-home-app .home {
+    padding: 20px;
+  }
+
+  .contact-home-app h2 {
+    font-size: 28px;
+  }
+
+  .contact-home-app .notifications h3 {
+    font-size: 20px;
+  }
+
+  .contact-home-app .reminder button {
+    width: 100%;
+    padding: 12px 0;
+  }
+}

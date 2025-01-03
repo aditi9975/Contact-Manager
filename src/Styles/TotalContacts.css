@@ -1,0 +1,341 @@
+.total-contact-app {
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    color: #333;
+    min-height: 100vh;
+}
+
+.total-contact-app h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #001A6E;
+}
+
+.total-contact-app .search-filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+}
+
+.total-contact-app .search-filter-container input {
+    width: 50%;
+    padding: 12px;
+    border: 1px solid #E0E0E0;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #333;
+    margin-right: 10px;
+    transition: border 0.3s ease;
+}
+
+.total-contact-app .search-filter-container input:focus {
+    border-color: #001A6E;
+    outline: none;
+}
+
+.total-contact-app .search-filter-container button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #FFABAB;
+    color: white;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.total-contact-app .search-filter-container button:hover {
+    background-color: #FF8A8A;
+    transform: translateY(-2px);
+}
+
+.total-contact-app .filter-container {
+    position: relative;
+}
+
+.total-contact-app .filter-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.total-contact-app .filter-btn:hover {
+    background-color: #45A049;
+    transform: translateY(-2px);
+}
+
+.total-contact-app .category-dropdown {
+    position: absolute;
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    padding: 10px;
+    top: 50px;
+    left: 0;
+    width: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    z-index: 10;
+}
+
+.total-contact-app .category-dropdown button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    text-align: left;
+    font-size: 1rem;
+    width: 100%;
+    color: #333;
+    transition: background-color 0.2s ease;
+}
+
+.total-contact-app .category-dropdown button:hover {
+    background-color: #F0F8FF;
+}
+
+.total-contact-app .close-dropdown {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #888;
+}
+
+.total-contact-app .delete-selected-btn {
+    background-color: #FF6347;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-left: 20px;
+}
+
+.total-contact-app .delete-selected-btn:hover {
+    background-color: #E55347;
+    transform: translateY(-2px);
+}
+
+.total-contact-app .delete-selected-btn:disabled {
+    background-color: #F1A7A7;
+    cursor: not-allowed;
+}
+
+.total-contact-app .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.total-contact-app .contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #FF8A8A;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: #001A6E;
+    margin-bottom: 20px;
+}
+
+.total-contact-app .contact-details {
+    flex: 1;
+}
+
+.total-contact-app .contact-item h4 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.total-contact-app .contact-item p {
+    margin: 5px 0;
+    color: #777;
+}
+
+.total-contact-app .contact-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #4CAF50;
+}
+
+.total-contact-app .contact-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.total-contact-app .contact-actions button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.total-contact-app .contact-actions button:hover {
+    color: #FFABAB;
+}
+
+
+.total-contact-app .search-result-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px; /* Softer corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Softer, deeper shadow */
+    position: fixed;
+    top: 15%; /* Slightly higher to center better */
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 450px; /* Increased width for better layout */
+    width: 90%;
+    max-height: 70vh; /* Adjusted height for better content visibility */
+    overflow-y: auto;
+    z-index: 100;
+    border: 1px solid #eee; /* Subtle border */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.total-contact-app .search-result-card h4 {
+    margin: 0 0 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+}
+
+.total-contact-app .search-result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.total-contact-app .close-search-popup {
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: #999;
+    transition: color 0.2s ease;
+}
+
+.total-contact-app .close-search-popup:hover {
+    color: #FF6347; /* Subtle color change on hover */
+}
+
+.total-contact-app .popup-contact-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease;
+}
+
+.total-contact-app .popup-contact-item:last-child {
+    border-bottom: none;
+}
+
+.total-contact-app .popup-contact-item h5 {
+    font-size: 1.1rem;
+    color: #001A6E;
+    margin: 0;
+    font-weight: 500;
+}
+
+.total-contact-app .popup-contact-item p {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.total-contact-app .popup-contact-item:hover {
+    background-color: #f9f9f9; /* Light hover effect */
+    cursor: pointer;
+}
+
+.total-contact-app .popup-contact-item p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+
+.total-contact-app .edit-contact-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.total-contact-app .edit-contact-modal {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    height: 530px; /* Adjusted height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding-top: 0px;
+}
+
+
+.total-contact-app .edit-contact-modal form {
+    display: flex;
+    flex-direction: column;
+}
+
+.total-contact-app .edit-contact-modal label {
+    margin-top: 0px;
+    font-weight: bold;
+}
+
+.total-contact-app .edit-contact-modal input,
+.total-contact-app .edit-contact-modal textarea,
+.total-contact-app .edit-contact-modal select {
+    margin-top: 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.total-contact-app .edit-contact-modal textarea {
+    resize: vertical;
+    min-height: 10px;
+}
+
+.total-contact-app .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.total-contact-app .modal-actions button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.total-contact-app .modal-actions button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+}
+
+.total-contact-app .modal-actions button[type="button"] {
+    background-color: #f44336;
+    color: white;
+}

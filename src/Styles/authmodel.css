@@ -1,0 +1,255 @@
+/* === Global Variables === */
+:root {
+  /* Light theme variables */
+  --light-background: #f1f7ff;
+  --light-text: #333333;
+  --light-primary: #001A6E;
+  --light-secondary: #FFABAB;
+  --light-card: #ffffff;
+  --light-shadow: rgba(0, 0, 0, 0.05);
+  --light-chart-shadow: #ffababb3;
+
+  /* Dark theme variables */
+  --dark-background: #1d2635;
+  --dark-text: #eaeaea;
+  --dark-primary: #FFABAB;
+  --dark-secondary: #074799;
+  --dark-card: #2a3d66;
+  --dark-shadow: rgba(0, 0, 0, 0.2);
+  --dark-chart-shadow: rgba(255, 171, 171, 0.2);
+}
+
+/* Auth Modal Overlay */
+#auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 26, 110, 0.85); /* Semi-transparent dark blue */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  background-color: var(--light-background); /* Default light background */
+  color: var(--light-text); /* Default light text */
+}
+
+/* Dark Mode */
+body.dark-mode #auth-modal-overlay {
+  background-color: var(--dark-background);
+  color: var(--dark-text);
+}
+
+/* Modal Content */
+#auth-modal-content {
+  background: var(--light-card);
+  width: 400px;
+  max-width: 90%;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 8px 24px var(--light-shadow);
+  position: relative;
+  text-align: left;
+  animation: fadeIn 0.3s ease-in-out;
+  font-family: 'Arial', sans-serif;
+  color: var(--light-primary);
+  font-weight: 200;
+}
+
+body.dark-mode #auth-modal-content {
+  background: var(--dark-card);
+  color: var(--dark-primary);
+  box-shadow: 0 8px 24px var(--dark-shadow);
+}
+
+/* Close Button */
+#auth-modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--light-primary);
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+body.dark-mode #auth-modal-close-btn {
+  color: var(--dark-primary);
+}
+
+#auth-modal-close-btn:hover {
+  color: var(--light-secondary); /* Pinkish red */
+  transform: rotate(90deg);
+}
+
+/* Heading */
+#auth-modal-content h2 {
+  font-size: 24px;
+  color: var(--light-primary);
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+body.dark-mode #auth-modal-content h2 {
+  color: var(--dark-primary);
+}
+
+/* Form Styling */
+#login-form,
+#register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#login-form input,
+#register-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid var(--light-primary);
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode #login-form input,
+body.dark-mode #register-form input {
+  border: 1.5px solid var(--dark-primary);
+}
+
+#login-form input:focus,
+#register-form input:focus {
+  border-color: #4CAF50; /* Green */
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Green glow */
+}
+
+/* Buttons */
+#login-form button,
+#register-form button,
+#google-login-btn,
+#forgot-password-btn {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  background: var(--light-secondary);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+body.dark-mode #login-form button,
+body.dark-mode #register-form button,
+body.dark-mode #google-login-btn,
+body.dark-mode #forgot-password-btn {
+  background: var(--dark-secondary);
+}
+
+#login-form button:hover,
+#register-form button:hover,
+#google-login-btn:hover,
+#forgot-password-btn:hover {
+  background: var(--light-secondary); /* Pinkish red */
+  transform: scale(1.05);
+}
+
+/* Secondary Buttons */
+#google-login-btn {
+  background: var(--light-primary);
+  font-weight: bold;
+  color: #ffffff;
+}
+
+body.dark-mode #google-login-btn {
+  background: var(--dark-primary);
+}
+
+#google-login-btn:hover {
+  background: var(--light-secondary); /* Pinkish red */
+}
+
+/* Forgot Password Button */
+#forgot-password-btn {
+  background: transparent;
+  color: #4CAF50; /* Green */
+  font-size: 14px;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+body.dark-mode #forgot-password-btn {
+  color: var(--dark-primary);
+}
+
+#forgot-password-btn:hover {
+  color: var(--light-secondary); /* Pinkish red */
+}
+
+/* Messages */
+.error-message {
+  color: var(--light-secondary);
+  font-size: 14px;
+  margin-top: -10px;
+}
+
+body.dark-mode .error-message {
+  color: var(--dark-secondary);
+}
+
+.success-message {
+  color: #4CAF50; /* Green */
+  font-size: 14px;
+  margin-top: -10px;
+}
+
+body.dark-mode .success-message {
+  color: #4CAF50; /* Green */
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Password input container */
+.password-input-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Eye icon styles */
+.password-toggle-icon {
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--light-primary);
+}
+
+body.dark-mode .password-toggle-icon {
+  color: var(--dark-primary);
+}
+
+.password-toggle-icon:hover {
+  color: #4CAF50; /* Green color on hover */
+}
+
+/* Submit Button Container */
+.password-input-container .type[submit] {
+  padding-top: 20px;
+}

@@ -1,0 +1,630 @@
+/* === Variables === */
+:root {
+  --light-bg: #F8F9FB;
+  --dark-bg: #a57171;
+  --light-text: #333;
+  --dark-text: #E0E0E0;
+  --primary-color: #001A6E;
+  --secondary-color: #FFABAB;
+  --card-bg-light: #FFF;
+  --card-bg-dark: #333;
+  --success-light: #4CAF50;
+  --success-dark: #03DAC6;
+  --input-border: #E0E0E0;
+  --input-border-dark: #444;
+  --btn-hover-light: #FF8A8A;
+  --btn-hover-dark: #FF5A5A;
+}
+
+/* === Body and Global Styles === */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+}
+
+/* === Light Mode Styles === */
+body.light {
+  --background-color: #f1f7ff;
+  --text-color: #333333;
+  --sidebar-bg: #BFECFF;
+  --sidebar-text: #2a3d66;
+  --interactive: #074799;
+  --button-hover: #CDC1FF;
+}
+
+/* === Dark Mode Styles === */
+body.dark {
+  --background-color: #1d2635;
+  --text-color: #eaeaea;
+  --sidebar-bg: #074799;
+  --sidebar-text: #eaeaea;
+  --interactive: #FFABAB;
+  --button-hover: #1f7dca;
+}
+
+/* Global Text Color Inheritance */
+body.dark, body.dark * {
+  color: var(--text-color);
+}
+
+/* === Sidebar Styles === */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px; /* Maintain consistent sidebar width */
+  height: 100vh;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  border-radius: 0 15px 15px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align items at the top */
+  padding: 0; /* Remove any extra padding */
+}
+
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Remove any top margin */
+}
+
+.sidebar ul li {
+  margin: 5px 0; /* Adjust spacing between items */
+  text-align: center;
+}
+
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: inherit;
+  padding: 5px 20px;
+  display: block;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 15px;
+  font-weight: 200;
+}
+
+.sidebar ul li a:hover {
+  background-color: var(--interactive);
+  transform: translateX(5px);
+  color: #fff;
+}
+
+/* === Main Content Styles === */
+.main-content {
+  margin-left: 200px;
+  padding: 30px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: margin-left 0.3s ease, background-color 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* === Footer Image Styling === */
+.footer-image {
+  width: 460px;
+  height: auto;
+  margin-top: -50px;
+  border-radius: 8px;
+  margin-left: -80px;
+}
+
+/* === Button Styles === */
+button {
+  background-color: var(--interactive);
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.29);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+button:focus {
+  outline: none;
+}
+
+/* === Theme Toggle Button Styles === */
+/* === Theme Toggle Button Styles === */
+.theme-toggle-btn {
+  position: relative;
+  top: 0;
+  left: 950px;
+  top: 20px;
+  right: 40px;
+  width: 80px;
+  height: 40px;
+  background-color: var(--sidebar-bg);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle-btn .icon {
+  font-size: 20px;
+  color: #fff;
+  transition: all 0.3s ease;
+  position: absolute;
+  z-index: 2;
+}
+
+.theme-toggle-btn .sun {
+  left: 10px;
+  opacity: 0;
+}
+
+.theme-toggle-btn .moon {
+  right: 10px;
+  opacity: 1;
+}
+
+.theme-toggle-btn.light .sun {
+  opacity: 1;
+}
+
+.theme-toggle-btn.light .moon {
+  opacity: 0;
+}
+
+.toggle-circle {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle-btn.light .toggle-circle {
+  transform: translateX(40px);
+}
+
+.theme-toggle-btn.light {
+  background-color: #5B9FFF;
+}
+
+.theme-toggle-btn.dark {
+  background-color: #2A3B53;
+}
+
+/* === Profile Icon Styles === */
+.profile-letter-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-letter-icon:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .theme-toggle-btn {
+    width: 60px;
+    height: 30px;
+    top: 15px;
+    right: 20px;
+  }
+
+  .toggle-circle {
+    width: 22px;
+    height: 22px;
+  }
+
+  .theme-toggle-btn.light .toggle-circle {
+    transform: translateX(30px);
+  }
+
+  .theme-toggle-btn .icon {
+    font-size: 16px;
+  }
+}
+
+/* === Sidebar Collapse/Expand Button (for mobile) === */
+.sidebar-toggle-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+      width: 200px;
+  }
+
+  .main-content {
+      margin-left: 200px;
+  }
+
+  .theme-toggle-btn {
+      top: 15px;
+      right: 15px;
+  }
+
+  .sidebar-toggle-btn {
+      display: block;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: var(--interactive);
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+  }
+}
+
+/* === Transition Effects === */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* === Profile Section (Updated) === */
+.profile-section {
+  margin: 0; /* Remove default margin */
+  padding: 10px 0; /* Adjust padding as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the profile icon */
+}
+
+
+.profile-icon {
+  background: none !important;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+}
+
+.profile-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50%;
+  text-align: center;
+  text-transform: uppercase; /* Make sure the first letter is uppercase */
+}
+
+
+/* === User Details Dropdown (Updated) === */
+/* === User Details Dropdown Base Styles === */
+.user-details-dropdown {
+  position: absolute;
+  top: 45px;
+  right: -180px;
+  width: 200px;
+  padding: 15px;
+  border-radius: 12px;
+  z-index: 110;
+  display: none;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* === Light Theme Styles === */
+body.light .user-details-dropdown {
+  background-color: var(--card-bg-light);
+  color: var(--light-text);
+  border: 1px solid var(--input-border);
+}
+
+/* === Dark Theme Styles === */
+body.dark .user-details-dropdown {
+  background-color: var(--card-bg-dark);
+  color: var(--dark-text);
+  border: 1px solid var(--input-border-dark);
+}
+
+/* === Dropdown Content Styles === */
+.user-details-dropdown h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.user-details-dropdown p {
+  font-size: 14px;
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+/* === User Info Section === */
+.user-info {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--input-border);
+  margin-bottom: 10px;
+}
+
+body.dark .user-info {
+  border-bottom-color: var(--input-border-dark);
+}
+
+/* === Dropdown Links === */
+.user-details-dropdown a {
+  display: block;
+  padding: 8px 12px;
+  margin: 5px -12px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+body.light .user-details-dropdown a {
+  color: var(--light-text);
+}
+
+body.light .user-details-dropdown a:hover {
+  background-color: var(--light-bg);
+  color: var(--primary-color);
+}
+
+body.dark .user-details-dropdown a {
+  color: var(--dark-text);
+}
+
+body.dark .user-details-dropdown a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* === Active State === */
+.profile-icon.active + .user-details-dropdown {
+  display: block;
+  animation: dropdownFade 0.2s ease;
+}
+
+/* === Animation === */
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Mobile Responsive === */
+@media (max-width: 768px) {
+  .user-details-dropdown {
+    right: -150px;
+    width: 180px;
+  }
+}
+
+/* === Sidebar Styling (Updated) === */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;  /* Ensure sidebar is on top */
+}
+
+/* === Sidebar Menu Items (Adjusted) === */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: -30px; /* Ensure spacing from the profile */
+}
+
+.sidebar ul li {
+  margin: 5px 0;
+  text-align: center;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: inherit;
+  padding: 10px 20px;
+  display: block;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 15px;
+  font-weight: 200;
+}
+
+.sidebar ul li a:hover {
+  background-color: var(--interactive);
+  transform: translateX(5px);
+  color: #fff;
+}
+
+/* === Footer Image Styling (Adjusted) === */
+.footer-image-container {
+  position: relative;
+  margin-top: auto;
+  z-index: 1;
+  pointer-events: none;
+  padding: 0;
+}
+
+.footer-image {
+  width: 300px; /* Restored original size */
+  height: auto;
+  margin-top: -50px; /* Restored original spacing */
+  margin-left: -50px; /* Restored original positioning */
+  opacity: 1;
+  pointer-events: none; /* Prevents click interference */
+}
+
+/* === Sidebar Toggle Button (Mobile) === */
+.sidebar-toggle-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .main-content {
+    margin-left: 200px;
+  }
+
+  .sidebar-toggle-btn {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--interactive);
+    border-radius: 50%;
+    width: 10px;
+    height: 20px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+.default-profile-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #007bff; /* Default color, can be dynamic */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #fff; /* Text color */
+  font-weight: bold;
+  text-transform: uppercase; /* Ensure the letter is uppercase */
+}
+
+/* === Language Selector Container === */
+.language-selector {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+/* === Select Element Base Styles === */
+.language-selector select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 8px 35px 8px 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+
+/* === Light Theme Styles === */
+body.light .language-selector select {
+  background-color: var(--card-bg-light);
+  color: var(--light-text);
+  border: 1px solid var(--input-border);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+body.light .language-selector select:hover {
+  border-color: var(--primary-color);
+  background-color: #f8f9fb;
+}
+
+body.light .language-selector select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 26, 110, 0.1);
+  outline: none;
+}
+
+/* === Dark Theme Styles === */
+body.dark .language-selector select {
+  background-color: var(--card-bg-dark);
+  color: var(--dark-text);
+  border: 1px solid var(--input-border-dark);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .language-selector select:hover {
+  border-color: var(--secondary-color);
+  background-color: #2a2a2a;
+}
+
+body.dark .language-selector select:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(255, 171, 171, 0.2);
+  outline: none;
+}
+
+/* === Options Styling === */
+.language-selector select option {
+  padding: 10px;
+}
+
+body.light .language-selector select option {
+  background-color: var(--card-bg-light);
+  color: var(--light-text);
+}
+
+body.dark .language-selector select option {
+  background-color: var(--card-bg-dark);
+  color: var(--dark-text);
+}
+
+/* === Disabled State === */
+.language-selector select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* === Mobile Responsive === */
+@media (max-width: 768px) {
+  .language-selector {
+    margin-right: 10px;
+  }
+  
+  .language-selector select {
+    padding: 6px 30px 6px 10px;
+    font-size: 13px;
+  }
+}

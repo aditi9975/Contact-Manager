@@ -1,0 +1,226 @@
+/* General Styles */
+.addapp-container {
+  font-family: 'Poppins', sans-serif;
+  padding: 20px; /* Decreased padding for default Chrome size */
+  min-height: 100vh;
+  max-width: 1100px; /* Decreased max width to fit within standard Chrome window */
+  margin: 0 auto;
+}
+
+/* Light Mode */
+.addapp-container.light-mode {
+  background-color: #F8F9FB; /* Light background */
+  color: #333; /* Dark text color for light mode */
+}
+
+/* Dark Mode */
+.addapp-container.dark-mode {
+  background-color: #a57171; /* Dark background */
+  color: #E0E0E0; /* Light text color for dark mode */
+}
+
+/* Recent Contacts List */
+.recent-contacts-list {
+  margin-top: -200px;
+}
+
+/* Light Mode Heading */
+.addapp-container.light-mode .recent-contacts-list h2 {
+  color: #dee4f6; /* Spring Green for heading */
+  font-size: 1.75rem; /* Reduced heading size */
+}
+
+/* Dark Mode Heading */
+.addapp-container.dark-mode .recent-contacts-list h2 {
+  color: #e3d8f0; /* Light purple for heading */
+}
+
+/* Contact Card */
+.contact-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px; /* Reduced padding for smaller viewports */
+  color: #c3c9dc;
+  background-color: #FF8A8A;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px; /* Adjusted margin */
+}
+
+/* Dark Mode Contact Card */
+.addapp-container.dark-mode .contact-card {
+  background-color: #333; /* Dark card background */
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Contact Card Details */
+.contact-details {
+  flex: 1;
+}
+
+.contact-card h3 {
+  margin: 0;
+  font-size: 1.125rem; /* Slightly smaller font size */
+  color: #001A6E; /* Spring green for contact name */
+}
+
+/* Dark Mode Contact Name */
+.addapp-container.dark-mode .contact-card h3 {
+  color: #BB86FC; /* Light purple for dark mode */
+}
+
+.contact-card p {
+  margin: 5px 0;
+  color: #777; /* Light gray text for contact info */
+}
+
+/* Dark Mode Contact Info */
+.addapp-container.dark-mode .contact-card p {
+  color: #E0E0E0; /* Light text for dark mode */
+}
+
+/* AddContact Form */
+.addaddapp-container {
+  width: 100%;
+  max-width: 650px; /* Slightly smaller form width */
+  margin: 0 auto;
+  padding: 20px; /* Decreased padding */
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode Form */
+.addapp-container.dark-mode .addapp-container {
+  background-color: #333; /* Dark form background */
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* AddContact Form Title */
+.addapp-content h2 {
+  text-align: center;
+  color: #001A6E;
+  margin-bottom: 25px; /* Reduced bottom margin */
+  font-size: 1.75rem; /* Slightly smaller title */
+}
+
+/* Dark Mode AddContact Title */
+.addapp-container.dark-mode .addapp-content h2 {
+  color: #BB86FC; /* Light purple for dark mode */
+}
+
+/* Input Fields */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333; /* Light text color in input fields for light mode */
+  transition: border 0.3s ease;
+}
+
+/* Dark Mode Input Fields */
+.addapp-container.dark-mode .input-field {
+  background-color: #333; /* Dark input background */
+  border: 1px solid #444;
+  color: #E0E0E0; /* Light text color in input fields for dark mode */
+}
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #FFABAB;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Dark Mode Submit Button */
+.addapp-container.dark-mode .submit-button {
+  background-color: #FF6F6F; /* Darker button for dark mode */
+}
+
+/* Submit Button Hover Effect */
+.submit-button:hover {
+  background-color: #FF8A8A;
+  transform: translateY(-2px);
+}
+
+/* Dark Mode Submit Button Hover */
+.addapp-container.dark-mode .submit-button:hover {
+  background-color: #FF5A5A;
+  transform: translateY(-2px);
+}
+
+/* Success Message */
+.success-message {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Dark Mode Success Message */
+.addapp-container.dark-mode .success-message {
+  background-color: #03DAC6; /* Light green for dark mode */
+}
+
+/* Success Message Animation */
+.success-message {
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* Card Hover Effect */
+.contact-card:hover {
+  box-shadow: 0 4px 12px #FF8A8A;
+  transform: translateY(-2px);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Dark Mode Card Hover Effect */
+.addapp-container.dark-mode .contact-card:hover {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .input-field {
+      padding: 10px;
+      font-size: 0.9rem;
+  }
+
+  .submit-button {
+      font-size: 0.9rem;
+  }
+
+  .addapp-container {
+      width: 90%;
+      padding: 20px;
+  }
+
+  .recent-contacts-list h2 {
+      font-size: 1.5rem;
+  }
+
+  .contact-card {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+}
