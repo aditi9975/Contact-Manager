@@ -1,0 +1,208 @@
+/* === Variables for both themes === */
+:root {
+  /* Light theme variables */
+  --light-background: #f1f7ff;
+  --light-text: #333333;
+  --light-primary: #001A6E;
+  --light-secondary: #FFABAB;
+  --light-card: #ffffff;
+  --light-shadow: rgba(0, 0, 0, 0.05);
+  --light-chart-shadow: #ffababb3;
+  
+  /* Dark theme variables */
+  --dark-background: #1d2635;
+  --dark-text: #eaeaea;
+  --dark-primary: #FFABAB;
+  --dark-secondary: #074799;
+  --dark-card: #2a3d66;
+  --dark-shadow: rgba(0, 0, 0, 0.2);
+  --dark-chart-shadow: rgba(255, 171, 171, 0.2);
+}
+/* Wrapper for the calendar layout */
+.dynamic-calendar-wrapper {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0px;
+  border-radius: 12px;
+  padding-left: 100px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode */
+.dynamic-calendar-wrapper.dark-mode {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+}
+
+/* Header Section with Month/Year */
+.dynamic-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  margin-bottom: 25px;
+  font-family: 'Arial', sans-serif;
+  color: var(--primary-color);
+}
+
+.dynamic-calendar-header.dark-mode {
+  color: #ecf0f1;
+}
+
+.calendar-nav-button {
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.calendar-nav-button:hover {
+  color: var(--secondary-color);
+}
+
+/* Dark Mode */
+.dynamic-calendar-wrapper.dark-mode .calendar-nav-button {
+  color: #ecf0f1;
+}
+
+.calendar-nav-button:hover {
+  color: #95a5a6;
+}
+
+.calendar-month-year h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.dynamic-calendar-wrapper.dark-mode .calendar-month-year h2 {
+  color: #ecf0f1;
+}
+
+/* Calendar Main Layout */
+.calendar-main {
+  background-color: var(--primary-color);
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 18px;
+  width: 600px;
+  padding-left: 20px;
+  margin-left: 80px;
+  height: 400px;
+}
+
+/* Styling the days grid */
+.react-calendar__month-view__weekdays {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.dynamic-calendar-wrapper.dark-mode .react-calendar__month-view__weekdays {
+  background-color: #34495e;
+  color: #ecf0f1;
+}
+
+.react-calendar__month-view__days__day {
+  padding: 15px;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.react-calendar__month-view__days__day:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  transform: scale(1.1);
+}
+
+.react-calendar__month-view__days__day.react-calendar__tile--active {
+  background-color: var(--secondary-color);
+  color: white;
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+/* Dark Mode Days */
+.dynamic-calendar-wrapper.dark-mode .react-calendar__month-view__days__day:hover {
+  background-color: #34495e;
+  color: #ecf0f1;
+}
+
+.react-calendar__tile--now {
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 100%;
+}
+
+.dynamic-calendar-wrapper.dark-mode .react-calendar__tile--now {
+  background-color: #34495e;
+  color: #ecf0f1;
+}
+
+/* Event Details Section */
+.event-details {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-left: -100px;
+}
+
+.dynamic-calendar-wrapper.dark-mode .event-details {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+}
+
+.event-details h3 {
+  font-size: 20px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.dynamic-calendar-wrapper.dark-mode .event-details h3 {
+  color: #ecf0f1;
+}
+
+/* Event Details Input and Button */
+.event-details input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.dynamic-calendar-wrapper.dark-mode input[type="text"] {
+  background-color: #34495e;
+  color: #ecf0f1;
+  border-color: #7f8c8d;
+}
+
+.event-details button {
+  padding: 10px 10px;
+  margin-left: 30px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.event-details button:hover {
+  background-color: hsl(204, 64%, 44%);
+}
+
+.dynamic-calendar-wrapper.dark-mode button {
+  background-color: #3498db;
+}
+
+.dynamic-calendar-wrapper.dark-mode button:hover {
+  background-color: #2980b9;
+}
